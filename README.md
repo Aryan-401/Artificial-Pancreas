@@ -12,3 +12,8 @@ Then install the requirements using the following command:
 ```
 pip install -r requirements.txt
 ```
+
+# Check List
+- [x] Constants
+- [x] GlucagonS
+- [x] GlucagenolysisS
