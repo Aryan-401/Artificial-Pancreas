@@ -17,3 +17,5 @@ pip install -r requirements.txt
 - [x] Constants
 - [x] GlucagonS
 - [x] GlucagenolysisS
+- [X] EGP
+- [x] Insulin dependent
