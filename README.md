@@ -20,3 +20,4 @@ pip install -r requirements.txt
 - [X] EGP
 - [x] Insulin dependent
 - [X] Kidney
+- [X] Meal
