@@ -30,3 +30,7 @@ class EGPModel(BaseModel):
     dG: float
     G: float
     x3: float
+
+
+class InsulinModel(BaseModel):
+    t: int

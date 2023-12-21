@@ -21,3 +21,4 @@ pip install -r requirements.txt
 - [x] Insulin dependent
 - [X] KidneyModel
 - [X] MealModel
+- [X] Insulin
