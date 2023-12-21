@@ -15,7 +15,7 @@ class MulDivModel(BaseModel):
 
     MulDivModel(**data)
     '''
-    inputs: List[int]
+    inputs: List[float]
     symbols: str
 
     @validator('symbols')
@@ -43,7 +43,7 @@ class AddSubModel(BaseModel):
 
     print(add_sub(AddSubModel(**data)))
     """
-    inputs: List[int]
+    inputs: List[float]
     symbols: str
 
     @validator('symbols')

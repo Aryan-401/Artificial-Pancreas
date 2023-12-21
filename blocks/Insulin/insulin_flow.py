@@ -30,5 +30,4 @@ KA3 = c.KA3
 mul_result_5 = mul_div(MulDivModel(inputs=[KB3, foo_bar], symbols='**'))  # FooBar3
 mul_result_6 = mul_div(MulDivModel(inputs=[foo_bar, KA3], symbols='**'))  # FooBar4
 add_result_4 = add_sub(AddSubModel(inputs=[mul_result_6, mul_result_5], symbols='-+'))  # To Integrator
-
-
+# RIGHTMOST BLOCK END
