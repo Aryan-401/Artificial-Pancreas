@@ -1,9 +1,11 @@
 from static.constants import Constants
+from static.type_check import GlucagonSModel
+
 
 c = Constants()
 
 
-def GlucagonS(G, I, dG):
+def GlucagonS(data: GlucagonSModel) -> float:
     Gb = c.Gb
     Gth = 60  # not set in constants.py
     P = 0.86  # not set in constants.py
@@ -12,11 +14,11 @@ def GlucagonS(G, I, dG):
     SRhb = c.n * c.Hb
     SRhs = SRhb
 
-    if G >= Gb:
+    if data.G >= Gb:
         SRhs = P * (SRhs - SRhb)
     else:
-        SRhs = P * (SRhs - max(((sigma * (Gth - G) / (I + 1)) + SRhb), 0))
+        SRhs = P * (SRhs - max(((sigma * (Gth - data.G) / (data.I + 1)) + SRhb), 0))
 
-    SRhd = delta * max(-dG, 0)
+    SRhd = delta * max(-1 * data.dG, 0)
     SRh = SRhs + SRhd
     return SRh

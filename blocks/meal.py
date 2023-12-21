@@ -1,8 +1,10 @@
 from static.constants import Constants
+from static.type_check import Meal
 
 c = Constants()
 
-def meal(t):
+
+def meal(data: Meal) -> float:
     d1 = 12.42
     Dg1 = (1000 * d1) / 180
     d2 = 1.83
@@ -14,15 +16,15 @@ def meal(t):
     # d5 = 3.45
     # Dg5=(1000*d5)/180
 
-    if t < 210:
+    if data.t < 210:
         y = 0
-    elif 210 <= t < 220:
+    elif 210 <= data.t < 220:
         y = Dg1
     # elif 390 <= t <= 410:
-    elif 450 <= t <= 470:
+    elif 450 <= data.t <= 470:
         y = Dg2
     # elif 600 <= t <= 610:
-    elif 690 <= t <= 700:
+    elif 690 <= data.t <= 700:
         y = Dg3
     # elif 765 <= t <= 785:
     #     y = Dg4
