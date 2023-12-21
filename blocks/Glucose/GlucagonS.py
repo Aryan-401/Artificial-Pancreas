@@ -1,5 +1,5 @@
-from static.constants import Constants
-from static.type_check import GlucagonSModel
+from blocks.static.constants import Constants
+from blocks.static.type_check import GlucagonSModel
 
 
 c = Constants()

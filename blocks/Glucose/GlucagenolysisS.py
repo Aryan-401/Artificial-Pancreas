@@ -1,5 +1,5 @@
-from static.constants import Constants
-from static.type_check import GlucagenolysisSModel
+from blocks.static.constants import Constants
+from blocks.static.type_check import GlucagenolysisSModel
 from math import tanh
 
 c = Constants()

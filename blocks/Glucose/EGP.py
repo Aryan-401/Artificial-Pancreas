@@ -1,10 +1,10 @@
-from static.constants import Constants
-from static.type_check import EGP
+from blocks.static.constants import Constants
+from blocks.static.type_check import EGPModel
 
 c = Constants()
 
 
-def EGPModel(data: EGP) -> float:
+def EGP(data: EGPModel) -> float:
     # Parameter values
     Gb = c.Gb  # mg/dL
     # Ggnb = 0.495 ;        %mg/dL/min

@@ -1,10 +1,10 @@
-from static.constants import Constants
-from static.type_check import Kidney
+from blocks.static.constants import Constants
+from blocks.static.type_check import KidneyModel
 
 c = Constants()
 
 
-def kidney(data: Kidney) -> float:
+def kidney(data: KidneyModel) -> float:
     Ke1 = 0.003
     Ke2 = 162
 

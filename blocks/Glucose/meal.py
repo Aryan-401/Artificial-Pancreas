@@ -1,10 +1,10 @@
-from static.constants import Constants
-from static.type_check import Meal
+from blocks.static.constants import Constants
+from blocks.static.type_check import MealModel
 
 c = Constants()
 
 
-def meal(data: Meal) -> float:
+def meal(data: MealModel) -> float:
     d1 = 12.42
     Dg1 = (1000 * d1) / 180
     d2 = 1.83

@@ -13,19 +13,19 @@ class GlucagenolysisSModel(BaseModel):
     t: int
 
 
-class InsulinIndependent(BaseModel):
+class InsulinIndependentModel(BaseModel):
     G: float
 
 
-class Kidney(BaseModel):
+class KidneyModel(BaseModel):
     G: float
 
 
-class Meal(BaseModel):
+class MealModel(BaseModel):
     t: int
 
 
-class EGP(BaseModel):
+class EGPModel(BaseModel):
     G6P: float
     dG: float
     G: float

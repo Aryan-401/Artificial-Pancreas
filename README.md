@@ -19,5 +19,5 @@ pip install -r requirements.txt
 - [x] GlucagenolysisS
 - [X] EGP
 - [x] Insulin dependent
-- [X] Kidney
-- [X] Meal
+- [X] KidneyModel
+- [X] MealModel
