@@ -21,23 +21,22 @@ class Body:
         self.Dg = Dg
 
     def m_default(self, t: float) -> float:
-        t = t
-        if t < 3600:
+        if t < 60:
             m = 0.0
         else:
-            if t < 14400:
-                t = t - 3600
+            if t < 240:
+                t = t - 60
                 m = 100 * 30.0 * self.c.Ag * t * exp(-t / self.c.tmax_I) / (self.c.Vg * pow(self.c.tmax_G, 2))
             else:
-                if t < 25200:
-                    t = t - 14400
+                if t < 420:
+                    t = t - 240
                     m = 100 * 15.0 * self.c.Ag * t * exp(-t / self.c.tmax_I) / (self.c.Vg * pow(self.c.tmax_G, 2))
                 else:
-                    if t < 50400:
-                        t = t - 25200
+                    if t < 840:
+                        t = t - 240
                         m = 100 * 80.0 * self.c.Ag * t * exp(-t / self.c.tmax_I) / (self.c.Vg * pow(self.c.tmax_G, 2))
                     else:
-                        t = t - 50400
+                        t = t - 840
                         m = 100 * 60.0 * self.c.Ag * t * exp(-t / self.c.tmax_I) / (self.c.Vg * pow(self.c.tmax_G, 2))
         return m
 
