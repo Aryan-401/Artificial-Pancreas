@@ -24,6 +24,8 @@ class Constant:
     tmax_G = 24.0
     Vg = 13.79
 
+    MAX_TIME = 1440
+
 class ListMaxSize(BaseModel):
     inputs: List[float]
     max_size: int
