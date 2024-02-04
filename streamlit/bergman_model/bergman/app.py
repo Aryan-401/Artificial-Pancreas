@@ -1,4 +1,4 @@
-from constants import Constant
+from constants import Constants
 from bergman_model import Body
 import streamlit as st
 
@@ -73,7 +73,7 @@ def main():
             f"<h6 style='margin-bottom: 0;'>Insulin Dosage {i + 1} Quantity</h6>",
             unsafe_allow_html=True
             )
-            insulin_dose = st.number_input(label="μL", key=f"insulin_dosage_{i}", min_value=0)
+            insulin_dose = st.number_input(label="μL", key=f"insulin_dosage_{i}", min_value=0.0, step=0.0001, format="%.4f")
             u_quantity.append(insulin_dose)
             st.markdown("<br>", unsafe_allow_html=True)
 
@@ -81,9 +81,9 @@ def main():
     insulin_time.append(9999)
 
 
-    c = Constant()
+    c = Constants()
     b = Body()
-    b.get_graph(c,meal_times,insulin_time, u_quantity, Dg)
+    b.get_graph(meal_times, insulin_time, u_quantity, Dg)
 
 
 if __name__ == '__main__':
