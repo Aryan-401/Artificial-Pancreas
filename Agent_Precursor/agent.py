@@ -88,7 +88,7 @@ if __name__ == '__main__':
     mealTimes = ListMaxSize(**meal_dict)
     dg_dict = {'inputs': [30, 20, 10, 40, 50, 30, 10, 50], 'max_size': c.NUM_MEALS}
     Dg = ListMaxSize(**dg_dict)
-    u_dict = {'inputs': [10, 10, 20, 10, 14, 20, 100, 20], 'max_size': c.NUM_MEALS}  # mu/l
+    u_dict = {'inputs': [10, 10, 20, 10, 100, 10, 30, 20], 'max_size': c.NUM_MEALS}  # mu/l
     u_meals = ListMaxSize(**u_dict)
     body = Body(mealTimes, u_meals, Dg)
     body.get_graph()

@@ -11,6 +11,9 @@ class Constant:
     u = 48.2328
     MAX_TIME = 1440
 
+    MAX_G = 120
+    MIN_G = 70
+
     p1 = 0.0337
     p2 = 0.0209
     p3 = 7.5 * pow(10, -6)
