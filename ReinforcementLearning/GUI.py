@@ -23,9 +23,9 @@ def choose_model(model_name):
 
 def choose_graph(graph_name):
     if graph_name == "Glucose v. Time":
-        return 'graph_gt.png'
+        return 'ReinforcementLearning/graph_gt.png'
     elif graph_name == "Insulin v. Time":
-        return 'graph_it.png'
+        return 'ReinforcementLearning/graph_it.png'
     else:
         raise ValueError('Invalid graph name')
 
@@ -43,7 +43,7 @@ image = None
 image_label = None
 
 
-def update_graph(file='graph.png'):
+def update_graph(file='ReinforcementLearning/graph.png'):
     global image
     global image_label
     if image is None:
@@ -122,7 +122,7 @@ def submit_data():
 
     model_name = model_choose_list.get()
     graph_name = graph_choose_list.get()
-    print(model_name)
+    print(model_name, graph_name)
     inference_model(model_name, all_data)
     update_graph(choose_graph(graph_name))
 

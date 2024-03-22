@@ -1,6 +1,6 @@
 from gymnasium import Env
 from gymnasium.spaces import Box
-from ReinforcementLearning.RLennv.Constants import Constants
+from RLennv.Constants import Constants
 import numpy as np
 from scipy.integrate import odeint
 from math import exp

@@ -1,8 +1,8 @@
 import torch
 import torch.nn as nn
 # from environment import Bergman
-from ReinforcementLearning.RLennv.Constants import Constants
-from ReinforcementLearning.RLennv.environment import Bergman
+from RLennv.Constants import Constants
+from RLennv.environment import Bergman
 import matplotlib.pyplot as plt
 
 
@@ -131,10 +131,8 @@ class NeuralNetwork_v8(nn.Module):
 
 
 def inference_model(model_name, meta_data):
-    print('I run')
     c = Constants()
     c.set_values(dict_=meta_data['parameters'])
-    print(c)
     meal_info = meta_data['grid_data']
     meal_gram = [meal_info[i] for i in range(len(meal_info)) if i % 2 == 0]
     meal_time = [meal_info[i] for i in range(len(meal_info)) if i % 2 == 1]
@@ -150,23 +148,21 @@ def inference_model(model_name, meta_data):
         file_name = 'NeuralNetwork_v8_1710154328_1000.pth'
     else:
         raise ValueError("Model not found")
-    model.load_state_dict(torch.load(f"Models/{file_name}", map_location=device))
+    model.load_state_dict(torch.load(f"ReinforcementLearning/Models/{file_name}", map_location=device))
 
     model.eval()
     with torch.no_grad():
         state = env.reset()
-        print(env.dg, env.timing)
         while env.cur_time <= c.MAX_TIME:
             state_tensor = torch.tensor(state, dtype= torch.float32).to(device)
             state_tensor = state_tensor.unsqueeze(0)
             action = model(state_tensor)
             n_state, _, __, ___ = env.step([action.item()])
-            # print(len(env.t_graph_list))
             state = n_state
 
     plt.plot(env.t_graph_list, env.g_graph_list, color='blue', label='Glucose Plot')
-    plt.savefig('graph_gt.png')
+    plt.savefig('ReinforcementLearning/graph_gt.png')
     plt.close()
     plt.plot(env.t_graph_list, env.i_graph_list, color='blue', label="Insulin Plot")
-    plt.savefig('graph_it.png')
+    plt.savefig('ReinforcementLearning/graph_it.png')
     plt.close()
